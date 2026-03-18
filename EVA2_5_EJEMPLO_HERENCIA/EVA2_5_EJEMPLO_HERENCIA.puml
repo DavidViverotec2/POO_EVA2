@@ -1,28 +1,34 @@
 @startuml
 
-class eva2_5_ejemplo_herencia.Persona{
+    class Persona {
         - String nombre
         - String ap_paterno
         - String ap_materno
         - String rfc
         - int edad
         - char genero
-
-        + String generarNombreCon()
-        + String regresarGenero()
-        + void imprimirDatos()
+        + Persona() 
+        + Persona(String, String, String, String, int, char) 
+        + generarNombreCon() String
+        + regresarGenero() String
+        + imprimirDatos() void
     }
-    
 
-class eva2_5_ejemplo_herencia.Empleado {
-
+    class Empleado {
         - String numero_empleado
         - String puesto
         - double salario
-        + void imprimirDatos()
-        + String toString()
-}
+        + Empleado() 
+        + Empleado(String, String, double, String, String, String, String, int, char) 
+        + imprimirDatos() void
+        + toString() String
+    }
 
+    class EVA2_5_EJEMPLO_HERENCIA {
+        + main(String[] args)$
+    }
 
-eva2_5_ejemplo_herencia.Empleado <|-- eva2_5_ejemplo_herencia.Persona
+    Persona <|-- Empleado : hereda
+    EVA2_5_EJEMPLO_HERENCIA ..> Persona : usa
+    EVA2_5_EJEMPLO_HERENCIA ..> Empleado : usa
 @enduml
