@@ -1,0 +1,6 @@
+@startuml
+class eva2_5_ejemplo_herencia.EVA2_5_EJEMPLO_HERENCIA
+class eva2_5_ejemplo_herencia.Empleado
+class eva2_5_ejemplo_herencia.Persona
+eva2_5_ejemplo_herencia.Empleado --|> eva2_5_ejemplo_herencia.Persona
+@enduml

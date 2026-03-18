@@ -1,0 +1,28 @@
+@startuml
+
+class eva2_5_ejemplo_herencia.Persona{
+        - String nombre
+        - String ap_paterno
+        - String ap_materno
+        - String rfc
+        - int edad
+        - char genero
+
+        + String generarNombreCon()
+        + String regresarGenero()
+        + void imprimirDatos()
+    }
+    
+
+class eva2_5_ejemplo_herencia.Empleado {
+
+        - String numero_empleado
+        - String puesto
+        - double salario
+        + void imprimirDatos()
+        + String toString()
+}
+
+
+eva2_5_ejemplo_herencia.Empleado <|-- eva2_5_ejemplo_herencia.Persona
+@enduml
