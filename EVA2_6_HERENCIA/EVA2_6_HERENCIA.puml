@@ -1,0 +1,37 @@
+@startuml
+    class Empleado {
+        - String nombre
+        - String apellidos
+        - String claveEmpleado
+        - double salario
+        + Empleado()
+        + Empleado(String, String, String, double)
+        + calcularSalario() double
+        + toString() String
+    }
+
+    class EmpleadoBase {
+        - int annioIngreso
+        + EmpleadoBase(int, String, String, String, double)
+        + EmpleadoBase(int)
+        + antiguedad() int
+        + calcularSalario() double
+        + toString() String
+    }
+
+    class EmpleadoHonorarios {
+        - int horas
+        + EmpleadoHonorarios(int, String, String, String, double)
+        + calcularSalario() double
+        + toString() String
+    }
+
+    class EVA2_6_HERENCIA {
+        + main(String[] args)$
+    }
+
+    Empleado <|-- EmpleadoBase : hereda
+    Empleado <|-- EmpleadoHonorarios : hereda
+    EVA2_6_HERENCIA ..> EmpleadoBase : usa
+    EVA2_6_HERENCIA ..> EmpleadoHonorarios : usa
+@enduml
