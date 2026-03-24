@@ -1,0 +1,35 @@
+@startuml
+    class Figuras {
+        +calcularArea() double
+        +calcularPerimetro() double
+    }
+
+    class Triangulo {
+        -double base
+        -double altura
+        -double lado1
+        -double lado2
+        -double lado3
+        +Triangulo(double, double, double, double, double)
+        +calcularArea() double
+        +calcularPerimetro() double
+        +toString() String
+    }
+
+    class Circulo {
+        -double radio
+        +Circulo(double)
+        +calcularArea() double
+        +calcularPerimetro() double
+        +toString() String
+    }
+
+    class EVA2_7_EJERCICIO_FIGURAS {
+        +main(String[] args) static
+    }
+
+    Figuras <|-- Triangulo : hereda
+    Figuras <|-- Circulo : hereda
+    EVA2_7_EJERCICIO_FIGURAS ..> Triangulo : usa
+    EVA2_7_EJERCICIO_FIGURAS ..> Circulo : usa
+@enduml
