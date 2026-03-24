@@ -1,0 +1,48 @@
+@startuml
+    class Figuras {
+        <<abstract>>
+        +calcularArea()* double
+        +calcularPerimetro()* double
+    }
+
+    class Circulo {
+        -radio: double
+        +Circulo()
+        +Circulo(radio: double)
+        +getRadio() double
+        +setRadio(radio: double)
+        +calcularArea() double
+        +calcularPerimetro() double
+    }
+
+    class Triangulo {
+        -base: double
+        -altura: double
+        -lado1: double
+        -lado2: double
+        -lado3: double
+        +Triangulo()
+        +Triangulo(base, altura, l1, l2, l3)
+        +getBase() double
+        +setBase(base: double)
+        +getAltura() double
+        +setAltura(altura: double)
+        +getLado1() double
+        +setLado1(lado1: double)
+        +getLado2() double
+        +setLado2(lado2: double)
+        +getLado3() double
+        +setLado3(lado3: double)
+        +calcularArea() double
+        +calcularPerimetro() double
+        +toString() String
+    }
+
+    class EVA2_8_ABSTRACT {
+        +main(args: String[])
+    }
+
+    Figuras <|-- Circulo : Extiende
+    Figuras <|-- Triangulo : Extiende
+    EVA2_8_ABSTRACT ..> Figuras : Usa
+@enduml
