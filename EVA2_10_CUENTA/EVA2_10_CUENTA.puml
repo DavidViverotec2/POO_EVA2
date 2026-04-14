@@ -1,0 +1,29 @@
+@startuml
+    class Cuenta {
+        <<abstract>>
+        # String titular
+        # double saldo
+        + Cuenta()
+        + Cuenta(String titular, double saldo)
+        + retirar(double monto)* void
+        + depositar(double monto)* void
+        + mostrarSaldo()* void
+    }
+
+    class CuentaAhorro {
+        # double intereses
+        + CuentaAhorro(double intereses, String titular, double saldo)
+        + interes() void
+        + retirar(double monto) void
+        + depositar(double monto) void
+        + mostrarSaldo() void
+        + intereses() void
+    }
+
+    class EVA2_10_CUENTA {
+        + main(String[] args) static
+    }
+
+    Cuenta <|-- CuentaAhorro : Hereda
+    EVA2_10_CUENTA ..> CuentaAhorro : Instancia
+@enduml
