@@ -1,0 +1,24 @@
+@startuml
+    class Mensaje {
+        <<interface>>
+        +int valor = 50
+        +mostrarMensaje()* void
+    }
+
+    class Persona {
+        -String nombre
+        -String apellidos
+        -int edad
+        +Persona()
+        +Persona(String nombre, String apellidos, int edad)
+        +mostrarMensaje() void
+    }
+
+    class EVA2_11_INTERFACE {
+        +main(String[] args) static
+    }
+
+    Mensaje <|.. Persona : Implementa
+    EVA2_11_INTERFACE ..> Persona : Instancia
+    EVA2_11_INTERFACE ..> Mensaje : Referencia
+@enduml
