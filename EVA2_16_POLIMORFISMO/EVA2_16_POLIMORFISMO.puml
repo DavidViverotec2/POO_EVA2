@@ -1,0 +1,39 @@
+@startuml
+    class Figuras {
+        <<interface>>
+        +calcularArea()* double
+        +calcularPerimetro()* double
+    }
+
+    class Circulo {
+        -double radio
+        +Circulo()
+        +Circulo(double radio)
+        +getRadio() double
+        +setRadio(double radio)
+        +calcularArea() double
+        +calcularPerimetro() double
+    }
+
+    class Rectangulo {
+        -double largo
+        -double alto
+        +Rectangulo()
+        +Rectangulo(double largo, double alto)
+        +getLargo() double
+        +setLargo(double largo)
+        +getAlto() double
+        +setAlto(double alto)
+        +calcularArea() double
+        +calcularPerimetro() double
+    }
+
+    class EVA2_16_POLIMORFISMO {
+        +main(String[] args)
+        +imprimir(Figuras figura)
+    }
+
+    Circulo ..|> Figuras : Implementa
+    Rectangulo ..|> Figuras : Implementa
+    EVA2_16_POLIMORFISMO ..> Figuras : Utiliza (polimorfismo)
+@enduml
