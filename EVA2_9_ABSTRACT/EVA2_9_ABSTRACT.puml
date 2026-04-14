@@ -1,0 +1,43 @@
+@startuml
+    class Persona {
+        <<abstract>>
+        #String nombre
+        #String apellidos
+        #int edad
+        +Persona()
+        +Persona(String nombre, String apellidos, int edad)
+        +getNombre() String
+        +setNombre(String nombre)
+        +getApellidos() String
+        +setApellidos(String apellidos)
+        +getEdad() int
+        +setEdad(int edad)
+        +calcularAntiguedad()* int
+    }
+
+    class Empleado {
+        -String clave
+        -String puesto
+        -double salario
+        -int annioIngreso
+        +Empleado()
+        +Empleado(String clave, String puesto, double salario, String nombre, String apellidos, int edad, int annioIngreso)
+        +getClave() String
+        +setClave(String clave)
+        +getPuesto() String
+        +setPuesto(String puesto)
+        +getSalario() double
+        +setSalario(double salario)
+        +getAnnioIngreso() int
+        +setAnnioIngreso(int annioIngreso)
+        +calcularAntiguedad() int
+        +imprimirDatos() void
+    }
+
+    class EVA2_9_ABSTRACT {
+        +main(String[] args)$
+    }
+
+    Persona <|--- Empleado : hereda
+    EVA2_9_ABSTRACT ...> Empleado : instancia
+@enduml
