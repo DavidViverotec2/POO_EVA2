@@ -1,0 +1,29 @@
+@startuml
+    class EVA2_15_FINAL {
+        +main(String[] args)
+    }
+
+    class Persona {
+        -String nombre
+        +Persona()
+        +Persona(String nombre)
+        +getNombre() String
+        +setNombre(String nombre)
+    }
+
+    class Empleado {
+        <<final>>
+        -String Puesto
+        +Empleado()
+        +Empleado(String Puesto, String nombre)
+        +getPuesto() String
+        +setPuesto(String Puesto)
+    }
+
+    class CEO {
+        <<Error: Cannot inherit>>
+    }
+
+    Empleado --|> Persona : Hereda
+    CEO --|> Empleado : Intenta heredar (Falla por limitacion)
+@enduml

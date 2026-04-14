@@ -1,0 +1,19 @@
+@startuml
+    class EVA2_14_CLASES_ANONIMAS {
+        +main(String[] args)
+    }
+
+    class Prueba {
+        <<interface>>
+        +mostrarMensaje()*
+    }
+
+    class ClaseAnonima {
+        <<anonymous>>
+        +mostrarMensaje()
+    }
+
+    EVA2_14_CLASES_ANONIMAS ..> Prueba : "Referencia"
+    EVA2_14_CLASES_ANONIMAS --> ClaseAnonima : "Instancia"
+    ClaseAnonima ..|> Prueba : "Implementa"
+@enduml
