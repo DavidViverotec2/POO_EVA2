@@ -1,0 +1,24 @@
+@startuml
+    class Prueba {
+        <<interface>>
+        +mensaje()* void
+    }
+
+    class OtraPrueba {
+        <<interface>>
+        +mostrarSaludo(String mensaje)* void
+    }
+
+    class Demostracion {
+        +mostrarSaludo(String mensaje) void
+        +mensaje() void
+    }
+
+    class EVA2_13_HERENCIA_INTERFACES {
+        +main(String[] args) static
+    }
+
+    Prueba <|-- OtraPrueba : Extiende
+    OtraPrueba <|.. Demostracion : Implementa
+    EVA2_13_HERENCIA_INTERFACES ..> Demostracion : Depende
+@enduml
