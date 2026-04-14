@@ -1,0 +1,41 @@
+@startuml
+    class Mensaje {
+        <<interface>>
+        +int valor = 50
+        +mostrarMensaje()* void
+    }
+
+    class Persona {
+        -String nombre
+        -String apellidos
+        -int edad
+        +Persona()
+        +Persona(String nombre, String apellidos, int edad)
+        +getNombre() String
+        +setNombre(String nombre) void
+        +getApellidos() String
+        +setApellidos(String apellidos) void
+        +getEdad() int
+        +setEdad(int edad) void
+    }
+
+    class Empleado {
+        -String puesto
+        -double salario
+        +Empleado()
+        +Empleado(String puesto, double salario, String nombre, String apellidos, int edad)
+        +getPuesto() String
+        +setPuesto(String puesto) void
+        +getSalario() double
+        +setSalario(double salario) void
+        +mostrarMensaje() void
+    }
+
+    class EVA2_12_INTERFACES {
+        +main(String[] args) static
+    }
+
+    Persona <|-- Empleado : Herencia
+    Mensaje <|.. Empleado : Implementa
+    EVA2_12_INTERFACES ..> Empleado : Instancia
+@enduml
